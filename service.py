@@ -2,7 +2,12 @@
 import bentoml
 import spacy
 
-@bentoml.service
+@bentoml.service(traffic={"timeout": 30},
+    resources={
+        "cpu": 1,
+        "memory": "4Gi",
+    },
+)
 class SpaceService:
     def __init__(self) -> None:
         self.model = spacy.load("en_core_web_sm")
