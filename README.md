@@ -1,8 +1,14 @@
 # BentoSpacy
-Serving a Sento with a Spacy model.
-
+Serving a Bento with a Spacy model.
+This bento also showcases to serve a custom generated pipelines
 
 ## Run locally
+Generate the custom pipeline and package it with `bentoml.models`.
+```
+python create_model.py
+```
+
+Serve locally
 ```
 bentoml serve
 ```
